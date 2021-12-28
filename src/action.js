@@ -147,9 +147,5 @@ async function main() {
 }
 
 main()
-    .then(() => {
-        console.log('inserted row in Excel successfully');
-    })
-    .catch((err) => {
-        core.setFailed(`Failed -> ${err}`);
-    });
+    .then(() => console.log('inserted row in Excel successfully'))
+    .catch((err) => core.setFailed(`Failed -> ${err}`));
