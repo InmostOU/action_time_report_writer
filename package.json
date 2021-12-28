@@ -1,0 +1,21 @@
+{
+  "name": "action-time-report-writer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/action.js",
+  "scripts": {
+    "build": "ncc build src/action.js -o dist",
+    "run-debug": "nodemon src/action.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^5.0.0",
+    "@vercel/ncc": "^0.33.0"
+  },
+  "dependencies": {
+    "googleapis": "^39.2.0"
+  }
+}

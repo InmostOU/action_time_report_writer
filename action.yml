@@ -1,0 +1,30 @@
+name: 'Writes a commit to Google Sheets'
+description: 'Writes a commit that was made for Jira in Google Sheets, with time, project name, and message.'
+author: '[Inmost]'
+
+inputs:
+  GOOGLE_CLIENT_ID:
+    description: 'Google Client ID'
+    required: true
+  GOOGLE_CLIENT_SECRET:
+    description: 'Google Client Secret'
+    required: true
+  GOOGLE_REFRESH_TOKEN:
+    description: 'Google Refresh Token'
+    required: true
+  DEVELOPERS:
+    description: 'Developer data'
+    required: true
+  JIRA_PROJECT:
+    description: 'Jira Project Name'
+    required: true
+  JIRA_LINK:
+    description: 'Jira Link'
+    required: true
+  JIRA_KEY:
+    description: 'Jira Key'
+    required: true
+
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

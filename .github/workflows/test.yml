@@ -1,0 +1,25 @@
+name: Test
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+    types: [ opened ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Write commit to timereport
+        uses: VladKozlov368/google-sheets-timereport@main
+        with:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          JIRA_PROJECT: ${{ secrets.JIRA_PROJECT }}
+          JIRA_LINK: ${{ secrets.JIRA_LINK }}
+          JIRA_KEY: ${{ secrets.JIRA_KEY }}
+          DEVELOPERS: ${{ secrets.DEVELOPERS }}
+          HEAD_COMMIT: ${{ toJSON(github.event.head_commit) }}
