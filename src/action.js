@@ -45,8 +45,14 @@ const sheets = google.sheets({
 // Example: 25.12
 function getToday() {
     const now = new Date();
-    const day = now.getDate();
-    const month = now.getMonth() + 1;
+    let day = now.getDate().toString();
+    if (day.length < 2) {
+        day = '0' + day;
+    }
+    let month = (now.getMonth() + 1).toString();
+    if (month.length < 2) {
+        month = '0' + month;
+    }
     return day + '.' + month;
 }
 
