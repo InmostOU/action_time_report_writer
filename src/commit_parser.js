@@ -23,7 +23,7 @@ function convertCommitTime(commitTime) {
         }
     }
 
-    return result.join(':') + '.000';
+    return result.join(':');
 }
 
 /*

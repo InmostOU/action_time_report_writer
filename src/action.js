@@ -13,7 +13,25 @@ const JIRA_LINK = core.getInput('JIRA_LINK') || process.env.JIRA_LINK;
 const JIRA_KEY = core.getInput('JIRA_KEY') || process.env.JIRA_KEY;
 const MAX_SHEET_ROWS = 1000;
 
-const HEAD_COMMIT = core.getInput('HEAD_COMMIT') ? JSON.parse(core.getInput('HEAD_COMMIT')) : JSON.parse(process.env.HEAD_COMMIT);
+const HEAD_COMMIT = {
+    "author": {
+        "email": "vlad.kozlov@inmost.pro",
+        "name": "Vlad Kozlov",
+        "username": "VladKozlov368"
+    },
+    "committer": {
+        "email": "vlad.kozlov@inmost.pro",
+        "name": "Vlad Kozlov",
+        "username": "VladKozlov368"
+    },
+    "distinct": true,
+    "id": "780be89d71a27fad4b46158191dd16958011a64f",
+    "message": "feat(DP-20): #time 20m message",
+    "timestamp": "2021-11-07T21:37:59+02:00",
+    "tree_id": "3480cdb1f96d2f5cabbebc128bc8bc437d51de4c",
+    "url": "https://github.com/GadHakim/flutter-action/commit/780be89d71a27fad4b46158191dd16958011a64f"
+};
+
 if (HEAD_COMMIT === undefined) {
     throw new Error('HEAD_COMMIT not found');
 }
