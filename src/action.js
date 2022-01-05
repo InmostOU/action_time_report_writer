@@ -20,7 +20,9 @@ if (HEAD_COMMIT === undefined) {
 
 const CURRENT_USER = helper.findUser(HEAD_COMMIT.committer, DEVELOPERS.value);
 if (CURRENT_USER === null) {
-    throw new Error('CURRENT_USER not found');
+    console.log('CURRENT_USER not found');
+    console.log('committer:', HEAD_COMMIT.committer);
+    return;
 }
 
 const SHEET_ID = CURRENT_USER.googleSheetId;
