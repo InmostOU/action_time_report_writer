@@ -96,6 +96,7 @@ async function getCurrentRowRangeDay() {
 
     for (let i = 0; i < dateColumn.length; i++) {
         let date = dateColumn[i][0];
+        console.log(date, today);
         if (date === today) {
             if (startRowIndexDay === -1) {
                 startRowIndexDay = i;
