@@ -62,7 +62,7 @@ function getCurrentDate() {
     const day = now.getDate();
     const month = now.getMonth() + 1;
     const year = now.getFullYear();
-    return month + '/' + day + '/' + year;
+    return day + '/' + month + '/' + year;
 }
 
 async function getCurrentRowRangeDay() {
